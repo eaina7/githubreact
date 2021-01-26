@@ -5,7 +5,7 @@ const DetailedProfile = () => {
   const { detailedProfileName } = useParams();
  return (   
 	      <div className="content">
-			DetailedProfile for {detailedProfileName}
+			  {detailedProfileName}
           </div>
 	);
 } 
