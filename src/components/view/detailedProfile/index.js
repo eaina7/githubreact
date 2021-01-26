@@ -1,7 +1,11 @@
-// ComponentName = DetailedProfile    
-const DetailedProfile = () => { return (   
+// ComponentName = DetailedProfile   
+import { useParams } from "react-router-dom";
+
+const DetailedProfile = () => { 
+  const { detailedProfileName } = useParams();
+ return (   
 	      <div>
-			DetailedProfile
+			DetailedProfile for {detailedProfileName}
           </div>
 	);
 } 
