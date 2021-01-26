@@ -1,15 +1,13 @@
-import React from 'react'
-
-function Nav() {
-    return (
-        <div>
-            <Nav>
+// Template for React-ComponentName.js     
+const NavBar = () => {  
+    return (   
+		<div>
+            <nav>
                 <h3>Eric</h3>
                 <h3>Stefan</h3>
                 <h3>Waldemar</h3>
-            </Nav>
-        </div>
-    )
-}
-
-export default Nav
+            </nav>
+        </div> 
+	);
+} 
+export default NavBar
