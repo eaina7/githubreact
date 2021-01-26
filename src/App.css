@@ -1,3 +1,12 @@
+:root {
+  --primary-color: white;
+  --blueish: #65799a;
+}
+ 
+body {
+  margin: 1px;  
+}
+ 
 .App {
   text-align: center;
 }

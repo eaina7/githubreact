@@ -1,0 +1,37 @@
+nav { 
+  background-color: var(--blueish);  
+  display: flex;
+  justify-content: space-around;
+} 
+nav div {  
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 3rem; 
+    color: white; 
+}
+#nav a   { 
+    margin: 1rem;
+    color: white; 
+} 
+#logo a  {
+	color: var(--primary-color);
+	text-decoration: none; 
+    width: 20vw;
+}
+
+
+
+@media only screen and (max-width: 768px) {  
+	nav div {   
+	    margin: 0 ; 
+	}
+}
+@media only screen and (max-width: 500px) {  
+ 	#nav a {   
+	    margin: .3em ; 
+	}
+	#nav { 		
+    	flex-direction: column;
+	}
+} 
