@@ -1,6 +1,6 @@
 // ComponentName = v    
 const rootPage = () => { return (   
-	      <div>
+	      <div  className="content">
 			rootPage
           </div>
 	);

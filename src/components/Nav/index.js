@@ -2,8 +2,7 @@
 import { NavLink } from "react-router-dom"; 
 import './style.css'
 
-
-const NavBar = () => {  
+const NavBar = ( {toggle}) => {  
     return (   
 	  <>
 	  <div>
@@ -19,7 +18,7 @@ const NavBar = () => {
 	        	</div> 
 
 	        	<div>
-	        		<span>Toggle Theme</span>
+	        		<span onClick={toggle}>Toggle Theme</span>
 	        	</div>
         	</nav>
       </div>
