@@ -1,5 +1,7 @@
 import { Switch, Route } from "react-router-dom";
 import NavBar from './components/Nav/';
+import DetailedProfile from './components/view/detailedProfile';
+
  
 function App() {
   return (
@@ -13,14 +15,10 @@ function App() {
 
 
     <Switch>
-      <Route path="/lookup" component={Lookup} />
-      <Route path="/list" component={ListWeather} />
-      <Route exact path="/" component={Home} />
-      <Route component={NotFound} />
-    </Switch>
-
+      <Route path="/details" component={DetailedProfile} />  
+    </Switch> 
 
     </>
   );
 } 
-export default App;
+export default App; 

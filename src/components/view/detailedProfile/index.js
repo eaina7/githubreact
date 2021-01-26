@@ -1,5 +1,4 @@
-// ComponentName = DetailedProfile   
-    
+// ComponentName = DetailedProfile    
 const DetailedProfile = () => { return (   
 	      <div>
 			DetailedProfile
