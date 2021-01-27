@@ -8,6 +8,12 @@
 # testing
 /coverage
 
+
+# excluded by Stefan
+.eslintcache
+package-lock.json
+
+
 # production
 /build
 
