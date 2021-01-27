@@ -1,38 +1,34 @@
-.App {
+* {
+  box-sizing: border-box;
+}
+:root {
+  --colorGreen: #93e24e;
+  --colorWhite: white;
+  --colorRed: #e66161;
+  --colorPaleRed: #e9c0c0;
+  --font_Roboto: "Roboto Slab", serif;
+  --font_Rubik: "Rubik", sans-serif;
+}
+
+/* fontsinfo: https://fonts.google.com/specimen/Roboto+Slab?query=roboto+slab&sidebar.open=true&selection.family=Roboto+Slab:wght@400;700|Rubik:wght@700   
+"Rubik" is for Bold 700 for the Titel 
+"Roboto slab" is for Bold 700 and Regular 400 
+*/
+
+html {
+  font-family: var(--font_Roboto);
+  font-size: 16px;
+}
+
+body {
   text-align: center;
+  margin: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.main {
+  max-width: 50rem;
+  background-color: var(--colorRed);
+  text-align: left;
+  margin: 2em auto;
+  padding: 2em 9em;
 }
