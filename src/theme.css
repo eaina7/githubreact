@@ -1,6 +1,6 @@
-.theme.white { 
+.theme.white  .content { 
   background-color: white;
 } 
 .theme.grey .content { 
   background-color: #eae2e2;
-} 
+}  
