@@ -1,14 +1,4 @@
-* {
-  box-sizing: border-box;
-}
-:root {
-  --colorGreen: #93e24e;
-  --colorWhite: white;
-  --colorRed: #e66161;
-  --colorPaleRed: #e9c0c0;
-  --font_Roboto: "Roboto Slab", serif;
-  --font_Rubik: "Rubik", sans-serif;
-}
+
 
 /* fontsinfo: https://fonts.google.com/specimen/Roboto+Slab?query=roboto+slab&sidebar.open=true&selection.family=Roboto+Slab:wght@400;700|Rubik:wght@700   
 "Rubik" is for Bold 700 for the Titel 
@@ -32,3 +22,19 @@ body {
   margin: 2em auto;
   padding: 2em 9em;
 }
+:root {
+  --primary-color: white;
+  --blueish: #65799a;
+}
+ 
+body {
+  margin: 0px;  
+}
+ 
+.content { 
+  display: flex;
+  justify-content: center;  
+  align-items: center;
+  width: 100%;
+  height: 90vh; 
+}  
