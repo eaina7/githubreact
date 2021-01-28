@@ -1,29 +1,42 @@
-import React, { useState } from "react";
+import React from 'react';
+import axios from 'axios';
 
-function Form() {
-  const [inputValue, setInputValue] = useState("");
+function Form({SetInputValue,inputValue}) {
 
-  const handleInputValue = (ev) => {
-    setInputValue(ev.target.value);
-  };
+  let inputHandler = (e) => {
+    SetInputValue(e.target.value);
+    
 
-  return (
-    <form action="">
-      <div className="inputArea shadow">
-        <input
-          value={inputValue}
-          onChange={handleInputValue}
-          type="text"
-          name="task"
-          id="task"
-          placeholder="GitHub Username"
-        />
-        <button type="submit" id="add">
-          Submit
-        </button>
-      </div>
-    </form>
-  );
+};
+let submitHandler = (e) => {
+    e.preventDefault();
+    if(!inputValue) return alert("Please type something");
+    axios
+      .get(`https://api.github.com/users/${inputValue}`)
+      .then((result) => { 
+        console.log('data',result.data)
+
+        //setUsers(result.data)
+      }
+        )
+
+      .catch((error) => console.log(error));
+    SetInputValue("");
+};
+    return (
+              
+        <form action="">
+          <div className="inputArea">
+          <input value = {inputValue} onChange = {inputHandler}
+            type="text"
+            name="task"
+            id="task"
+            placeholder="GitHub Username"
+          />
+          <button onClick = {submitHandler}type = "submit" id="add">Submit</button>
+        </div>
+        </form>
+    )
 }
 
-export default Form;
+export default Form
