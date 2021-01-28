@@ -1,3 +1,27 @@
+
+
+/* fontsinfo: https://fonts.google.com/specimen/Roboto+Slab?query=roboto+slab&sidebar.open=true&selection.family=Roboto+Slab:wght@400;700|Rubik:wght@700   
+"Rubik" is for Bold 700 for the Titel 
+"Roboto slab" is for Bold 700 and Regular 400 
+*/
+
+html {
+  font-family: var(--font_Roboto);
+  font-size: 16px;
+}
+
+body {
+  text-align: center;
+  margin: 0;
+}
+
+.main {
+  max-width: 50rem;
+  background-color: var(--colorRed);
+  text-align: left;
+  margin: 2em auto;
+  padding: 2em 9em;
+}
 :root {
   --primary-color: white;
   --blueish: #65799a;

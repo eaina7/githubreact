@@ -1,7 +1,7 @@
 // ComponentName = v    
 const rootPage = () => { return (   
 	      <div  className="content">
-			rootPage
+			rootPage!
           </div>
 	);
 } 
