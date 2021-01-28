@@ -7,6 +7,7 @@ import './App.css';
 import './theme.css';
  
 function App() { 
+     let history = useHistory();
 	 const [theme, setTheme] = useState(true); 
 	 const toggleTheme = () => { 
 	 	 setTheme(!theme)
@@ -23,4 +24,4 @@ function App() {
     </>
   );
 } 
-export default App;   
+export default App; 
