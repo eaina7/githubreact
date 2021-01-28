@@ -1,6 +1,7 @@
 // Template for React-ComponentName.js   
 import { NavLink } from "react-router-dom"; 
 import './style.css'
+import ToggleTheme from './toggleTheme'
 
 const NavBar = ( {toggle}) => {  
     return (   
@@ -8,17 +9,20 @@ const NavBar = ( {toggle}) => {
 	  <div>
 		    <nav> 
 			    <div id="logo">   
-	                <NavLink to="/" > <h1> GitHub Profiles </h1> </NavLink> 
+	                <NavLink to="/" >
+	                	<h1> GitHub Profiles </h1>
+	                </NavLink> 
 		      	</div>
 				<div id="nav"> 				
 	                <NavLink to="/" >Search</NavLink> 
 	                <NavLink to="/details/eric">Eric</NavLink>
 	                <NavLink to="/details/stefan">Stefan</NavLink>
-	                <NavLink to="/details/waldemar">Waldemar</NavLink>  
+	                <NavLink to="/details/waldemar">Waldemar</NavLink> 
+	                <NavLink to="/usersWhatsoever">usersWhatsoever</NavLink>  
 	        	</div> 
 
-	        	<div>
-	        		<span onClick={toggle}>Toggle Theme</span>
+	        	<div  onClick={toggle}> 
+	        		<ToggleTheme handler={toggle}/>
 	        	</div>
         	</nav>
       </div>
