@@ -35,22 +35,16 @@ type: "User"
 updated_at: "2021-01-26T15:13:39Z"
 url: "https://api.github.com/users/eaina7"
 */
-    return (
-        
-            <div className= "users"> 
+    return ( 
+            <div className= "users content"> This is Eric's  TEST User Component
                 { users && 
-              <div>
-                  <div>{users.id}</div>
-              <div>{users.name}</div>
-              <img src={users.avatar_url}/>
+                      <div>
+                          <div>{users.id}</div>
+                          <div>{users.name}</div>
+                          <img src={users.avatar_url}/>
+                    </div>    
+                }
             </div>  
-            
-            
-                
-}
-</div>
-        
     );
-}
-
+} 
 export default Users

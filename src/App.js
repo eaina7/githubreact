@@ -3,20 +3,21 @@ import { Switch, Route, useHistory } from "react-router-dom";
 import NavBar from './components/Nav/';
 import DetailedProfile from './components/view/detailedProfile';
 import rootPage from './components/view/rootPage';
-import './App.css';
-import './theme.css';
+import './App.css'; 
 import axios from 'axios';
 import Form from './components/Form';
 
 
  
 function App() { 
-   const [theme, setTheme] = useState(true); 
-   const [inputValue, SetInputValue] = useState();
-   const [display, SetDispaly] = useState();
-	 const toggleTheme = () => { 
-      setTheme(!theme);
-   }
+
+ 
+     let history = useHistory(); 
+     const [theme, setTheme] = useState(true); 
+     const [display, SetDispaly] = useState();
+     const [inputValue, SetInputValue] = useState(); 
+	   const toggleTheme = () => {  setTheme(!theme); }
+
 
       
 
@@ -26,9 +27,10 @@ function App() {
     <>  
 	    <div  className={`${theme ? "grey" : "white"} App theme`}> 
 		    <NavBar toggle={toggleTheme} />
-        <Form inputValue = {inputValue} SetInputValue = {SetInputValue}/>
-		    <Switch>
-          
+        <Form inputValue = {inputValue} SetInputValue = {SetInputValue}/> 
+		    <Switch>    
+
+          <Route path="/usersWhatsoever" component={Users} />   
 		      <Route path="/details/:detailedProfileName" component={DetailedProfile} /> 
 		      <Route path="/" component={rootPage} />  
 		    </Switch>  
@@ -36,5 +38,5 @@ function App() {
     </>
   );
   
-} 
-export default App  
+}  
+export default App
