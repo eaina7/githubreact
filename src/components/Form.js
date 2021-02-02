@@ -1,7 +1,9 @@
 import React from 'react';
 import axios from 'axios';
+import { useState} from "react"; 
 
 function Form({SetInputValue,inputValue}) {
+  const [user, setUser] = useState();
 
   let inputHandler = (e) => {
     SetInputValue(e.target.value);
@@ -14,7 +16,9 @@ let submitHandler = (e) => {
     axios
       .get(`https://api.github.com/users/${inputValue}`)
       .then((result) => { 
-        console.log('data',result.data)
+
+        console.log(result)
+        setUser(result.data)
 
         //setUsers(result.data)
       }
@@ -24,7 +28,7 @@ let submitHandler = (e) => {
     SetInputValue("");
 };
     return (
-              
+         <div>     
         <form action="">
           <div className="inputArea">
           <input value = {inputValue} onChange = {inputHandler}
@@ -36,6 +40,8 @@ let submitHandler = (e) => {
           <button onClick = {submitHandler}type = "submit" id="add">Submit</button>
         </div>
         </form>
+        <div>{user ? <div>{user.login} <img src={user.avatar_url}/></div>: null}</div>
+        </div>
     )
 }
 
