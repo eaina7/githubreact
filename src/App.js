@@ -30,7 +30,7 @@ function App() {
         <Form inputValue = {inputValue} SetInputValue = {SetInputValue}/> 
 		    <Switch>    
 
-          <Route path="/usersWhatsoever" component={Users} />   
+          {/*<Route path="/usersWhatsoever" component={Users} /> */}  
 		      <Route path="/details/:detailedProfileName" component={DetailedProfile} /> 
 		      <Route path="/" component={rootPage} />  
 		    </Switch>  
