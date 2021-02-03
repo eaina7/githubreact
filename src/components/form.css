@@ -1,0 +1,19 @@
+.diplay{ 
+    display: flex;
+    height: 30vh;
+    width: 100%;
+    margin-top: 30px;
+  }  
+  * {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+img {
+    height: 150px;
+    width: 150px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-right: 15px;
+    border: 5px solid rgb(132, 148, 174);
+}
