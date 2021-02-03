@@ -15,8 +15,8 @@ const NavBar = ( {toggle}) => {
 		      	</div>
 				<div id="nav"> 				
 	                <NavLink to="/" >Search</NavLink> 
-	                <NavLink to="/details/eric">Eric</NavLink>
-	                <NavLink to="/details/stefan">Stefan</NavLink>
+	                <NavLink to="/details/eaina7">Eric</NavLink>
+	                <NavLink to="/details/stefanibus">Stefan</NavLink>
 	                <NavLink to="/details/waldemar">Waldemar</NavLink> 
 	                <NavLink to="/usersWhatsoever">usersWhatsoever</NavLink>  
 	        	</div> 
