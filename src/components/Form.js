@@ -1,41 +1,56 @@
-import React from 'react';
-import axios from 'axios';
+import React from 'react'
+import axios from 'axios'
+import { NavLink, useRouteMatch } from 'react-router-dom'
+import { useState } from 'react'
+import './form.css'
 
-function Form({SetInputValue,inputValue}) {
+function Form({ user, setUser, displayUsername }) {
+    const match = useRouteMatch('/search')
+    //const { detailedProfileName } = useParams()
 
-  let inputHandler = (e) => {
-    SetInputValue(e.target.value);
-    
+    let inputHandler = (e) => {
+        setUser(e.target.value)
+    }
+    let submitHandler = (e) => {
+        e.preventDefault()
+        if (!user) return alert('Please type something')
+        setUser('')
+    }
 
-};
-let submitHandler = (e) => {
-    e.preventDefault();
-    if(!inputValue) return alert("Please type something");
-    axios
-      .get(`https://api.github.com/users/${inputValue}`)
-      .then((result) => { 
-        console.log('data',result.data)
+    // console.log(
+    //     'Question: why does that not work? detailedProfileName in FORMS Component  ',
+    //     detailedProfileName
+    // )
 
-        //setUsers(result.data)
-      }
-        )
-
-      .catch((error) => console.log(error));
-    SetInputValue("");
-};
     return (
-              
-        <form action="">
-          <div className="inputArea">
-          <input value = {inputValue} onChange = {inputHandler}
-            type="text"
-            name="task"
-            id="task"
-            placeholder="GitHub Username"
-          />
-          <button onClick = {submitHandler}type = "submit" id="add">Submit</button>
+        <div>
+            <form action="">
+                <div className={`inputArea   ${match ? 'on' : 'off'}`}>
+                    <input
+                        className="input"
+                        value={user}
+                        onChange={inputHandler}
+                        type="text"
+                        name="task"
+                        id="task"
+                        placeholder="type another GitHub-Username"
+                    />
+                    <button onClick={submitHandler} type="submit" id="add">
+                        <NavLink to={`/details/${user}`}>
+                            search Github-user
+                        </NavLink>
+                    </button>{' '}
+                    {match ? (
+                        <p>
+                            <span>Search for another GitHub-User now.</span>
+                        </p>
+                    ) : (
+                        <p>Look at this Profile {user}</p>
+                    )}
+                </div>
+            </form>
+            <div className="display"></div>
         </div>
-        </form>
     )
 }
 
