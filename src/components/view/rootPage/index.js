@@ -1,8 +1,5 @@
-// ComponentName = v    
-const rootPage = () => { return (   
-	      <div  className="content">
-			rootPage!
-          </div>
-	);
-} 
+// ComponentName = v
+const rootPage = () => {
+	return <div className="content">This is the searchpage.</div>
+}
 export default rootPage
