@@ -46,7 +46,7 @@ const DetailedProfile = () => {
 						<img src={githubinfo.avatar_url} /> <br /> <br />
 						<p>
 							Number of public Repositories:
-							{githubinfo.public_repos}{' '}
+							{githubinfo.public_repos}
 						</p>
 						<br />
 					</div>

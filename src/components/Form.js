@@ -18,8 +18,12 @@ function Form({ user, setUser, displayUsername }) {
     }
 
     // console.log(
-    //     'Question: why does that not work? detailedProfileName in FORMS Component  ',
+    //     'First Question: why can I not print detailedProfileName to the console? It does work in view/detailedProfile/index.js, but not  in my FORMS Component. Why?  ',
     //     detailedProfileName
+    // )
+
+    // console.log(
+    //     'Second Question: on line 45  a NAVLink is placed inside of a button-Element. This structure works well. But what If the user hits return in the inputfield? That would neither trigger onsubmit nor the NavLink.  What is best practice here to trigger both  eventhandlers  in  the inputfield ?  ',
     // )
 
     return (
