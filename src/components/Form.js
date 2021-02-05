@@ -1,12 +1,16 @@
 import React from 'react'
 import axios from 'axios'
 import { NavLink, useRouteMatch } from 'react-router-dom'
+import { matchPath } from 'react-router'
 import { useState } from 'react'
 import './form.css'
 
 function Form({ user, setUser, displayUsername }) {
+    // boolean: we use useRouteMatch to check if the pathname contains "/search".
     const match = useRouteMatch('/search')
-    //const { detailedProfileName } = useParams()
+    // for the Form-Component to showName below the Inputfield,
+    // we need to retrieve the Username separately again
+    const showName = window.location.pathname.split('/')[2]
 
     let inputHandler = (e) => {
         setUser(e.target.value)
@@ -16,15 +20,6 @@ function Form({ user, setUser, displayUsername }) {
         if (!user) return alert('Please type something')
         setUser('')
     }
-
-    // console.log(
-    //     'First Question: why can I not print detailedProfileName to the console? It does work in view/detailedProfile/index.js, but not  in my FORMS Component. Why?  ',
-    //     detailedProfileName
-    // )
-
-    // console.log(
-    //     'Second Question: on line 45  a NAVLink is placed inside of a button-Element. This structure works well. But what If the user hits return in the inputfield? That would neither trigger onsubmit nor the NavLink.  What is best practice here to trigger both  eventhandlers  in  the inputfield ?  ',
-    // )
 
     return (
         <div>
@@ -43,13 +38,13 @@ function Form({ user, setUser, displayUsername }) {
                         <NavLink to={`/details/${user}`}>
                             search Github-user
                         </NavLink>
-                    </button>{' '}
+                    </button>
                     {match ? (
                         <p>
                             <span>Search for another GitHub-User now.</span>
                         </p>
                     ) : (
-                        <p>Look at this Profile {user}</p>
+                        <p>Look at {showName ? showName : ' '} 's Profile</p>
                     )}
                 </div>
             </form>

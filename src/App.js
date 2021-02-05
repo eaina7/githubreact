@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { Switch, Route } from 'react-router-dom'
+import { Switch, Route, Redirect } from 'react-router-dom'
 import NavBar from './components/Nav/'
 import DetailedProfile from './components/view/detailedProfile'
 import rootPage from './components/view/rootPage'
@@ -26,7 +26,9 @@ function App() {
                         component={DetailedProfile}
                     />
                     <Route path="/search" component={rootPage} />
-                    <Route path="/" component={rootPage} />
+                    <Route exact path="/">
+                        <Redirect to="/search" />
+                    </Route>
                 </Switch>
             </div>
         </>
