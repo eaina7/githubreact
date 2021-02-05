@@ -9,7 +9,7 @@ const NavBar = ({ toggle }) => {
 			<div>
 				<nav>
 					<div id="logo">
-						<NavLink to="/">
+						<NavLink to="/search">
 							<h1> GitHub Profiles </h1>
 						</NavLink>
 					</div>

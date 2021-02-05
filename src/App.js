@@ -1,15 +1,13 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { Switch, Route, Redirect } from 'react-router-dom'
 import NavBar from './components/Nav/'
 import DetailedProfile from './components/view/detailedProfile'
 import rootPage from './components/view/rootPage'
 import './App.css'
-import axios from 'axios'
 import Form from './components/Form'
 
 function App() {
     const [theme, setTheme] = useState(true)
-
     const [user, setUser] = useState('')
     const toggleTheme = () => {
         setTheme(!theme)

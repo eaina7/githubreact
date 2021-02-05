@@ -1,8 +1,5 @@
 import React from 'react'
-import axios from 'axios'
 import { NavLink, useRouteMatch } from 'react-router-dom'
-import { matchPath } from 'react-router'
-import { useState } from 'react'
 import './form.css'
 
 function Form({ user, setUser, displayUsername }) {
