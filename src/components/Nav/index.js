@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom'
 import './style.css'
 import ToggleTheme from './toggleTheme'
 
-const NavBar = ({ toggle }) => {
+const NavBar = ({ toggle }) => { 
 	return (
 		<>
 			<div>
@@ -16,16 +16,15 @@ const NavBar = ({ toggle }) => {
 					<div id="nav">
 						<NavLink to="/details/eaina7">Eric</NavLink>
 						<NavLink to="/details/stefanibus">Stefan</NavLink>
-						<NavLink to="/details/waldemar">Waldemar</NavLink>
+						<NavLink to="/details/waldemar-bl">Waldemar</NavLink>
 						<NavLink to="/search">search</NavLink>
-					</div>
-
-					<div onClick={toggle}>
-						<ToggleTheme handler={toggle} />
-					</div>
-				</nav>
-			</div>
-		</>
-	)
+					</div> 
+                    <div onClick={toggle}>
+                        <ToggleTheme handler={toggle} />
+                    </div>
+                </nav>
+            </div>
+        </>
+    )
 }
 export default NavBar
