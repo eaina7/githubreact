@@ -18,6 +18,12 @@ function Form({ user, setUser, displayUsername }) {
         setUser('')
     }
 
+    const triggerNavLink = (event) => {
+        if(event.code === 'Enter') {
+            console.log('event: ', event);
+        }
+    }
+
     return (
         <div>
             <form action="">
@@ -26,6 +32,7 @@ function Form({ user, setUser, displayUsername }) {
                         className="input"
                         value={user}
                         onChange={inputHandler}
+                        // onKeyPress={triggerNavLink}
                         type="text"
                         name="task"
                         id="task"
