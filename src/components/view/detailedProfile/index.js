@@ -8,24 +8,23 @@ const DetailedProfile = () => {
 	let [githubinfo, setGitHubInfo] = useState()
 
 	useEffect(() => {
+		const runAPI = () => {
+			axios
+				.get(`https://api.github.com/users/${detailedProfileName}`)
+				.then((result) => setGitHubInfo(result.data))
+				.catch((error) => {
+					const newUser = {
+						login: 'This is not a valid GitHub-User',
+						avatar_url:
+							'https://as1.ftcdn.net/jpg/02/43/95/20/500_F_243952078_O0BsLa1fHPrWjKtRwXw8xhhRoOS94aZJ.jpg',
+						public_repos: '',
+					}
+					setGitHubInfo(newUser)
+					console.log(error)
+				})
+		}
 		runAPI()
 	}, [detailedProfileName])
-
-	const runAPI = () => {
-		axios
-			.get(`https://api.github.com/users/${detailedProfileName}`)
-			.then((result) => setGitHubInfo(result.data))
-			.catch((error) => {
-				const newUser = {
-					login: 'This is not a valid GitHub-User',
-					avatar_url:
-						'https://as1.ftcdn.net/jpg/02/43/95/20/500_F_243952078_O0BsLa1fHPrWjKtRwXw8xhhRoOS94aZJ.jpg',
-					public_repos: '',
-				}
-				setGitHubInfo(newUser)
-				console.log(error)
-			})
-	}
 
 	/**
 	 * create a useeffect
@@ -43,10 +42,14 @@ const DetailedProfile = () => {
 				{githubinfo ? (
 					<div>
 						{githubinfo.login} <br /> <br />
-						<img src={githubinfo.avatar_url} /> <br /> <br />
+						<img
+							alt="githubUser"
+							src={githubinfo.avatar_url}
+						/>{' '}
+						<br /> <br />
 						<p>
 							Number of public Repositories:
-							{githubinfo.public_repos}{' '}
+							{githubinfo.public_repos}
 						</p>
 						<br />
 					</div>

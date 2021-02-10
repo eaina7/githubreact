@@ -1,16 +1,13 @@
-import { useState, useEffect } from 'react'
-import { Switch, Route, useHistory } from 'react-router-dom'
+import { useState } from 'react'
+import { Switch, Route, Redirect } from 'react-router-dom'
 import NavBar from './components/Nav/'
 import DetailedProfile from './components/view/detailedProfile'
 import rootPage from './components/view/rootPage'
 import './App.css'
-import axios from 'axios'
 import Form from './components/Form'
 
 function App() {
-    let history = useHistory()
     const [theme, setTheme] = useState(true)
-
     const [user, setUser] = useState('')
     const toggleTheme = () => {
         setTheme(!theme)
@@ -27,7 +24,9 @@ function App() {
                         component={DetailedProfile}
                     />
                     <Route path="/search" component={rootPage} />
-                    <Route path="/" component={rootPage} />
+                    <Route exact path="/">
+                        <Redirect to="/search" />
+                    </Route>
                 </Switch>
             </div>
         </>

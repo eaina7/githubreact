@@ -1,12 +1,13 @@
 import React from 'react'
-import axios from 'axios'
 import { NavLink, useRouteMatch } from 'react-router-dom'
-import { useState } from 'react'
 import './form.css'
 
 function Form({ user, setUser, displayUsername }) {
+    // boolean: we use useRouteMatch to check if the pathname contains "/search".
     const match = useRouteMatch('/search')
-    //const { detailedProfileName } = useParams()
+    // for the Form-Component to showName below the Inputfield,
+    // we need to retrieve the Username separately again
+    const showName = window.location.pathname.split('/')[2]
 
     let inputHandler = (e) => {
         setUser(e.target.value)
@@ -17,10 +18,11 @@ function Form({ user, setUser, displayUsername }) {
         setUser('')
     }
 
-    // console.log(
-    //     'Question: why does that not work? detailedProfileName in FORMS Component  ',
-    //     detailedProfileName
-    // )
+    const triggerNavLink = (event) => {
+        if(event.code === 'Enter') {
+            console.log('event: ', event);
+        }
+    }
 
     return (
         <div>
@@ -30,6 +32,7 @@ function Form({ user, setUser, displayUsername }) {
                         className="input"
                         value={user}
                         onChange={inputHandler}
+                        // onKeyPress={triggerNavLink}
                         type="text"
                         name="task"
                         id="task"
@@ -39,13 +42,13 @@ function Form({ user, setUser, displayUsername }) {
                         <NavLink to={`/details/${user}`}>
                             search Github-user
                         </NavLink>
-                    </button>{' '}
+                    </button>
                     {match ? (
                         <p>
                             <span>Search for another GitHub-User now.</span>
                         </p>
                     ) : (
-                        <p>Look at this Profile {user}</p>
+                        <p>Look at {showName ? showName : ' '} 's Profile</p>
                     )}
                 </div>
             </form>
